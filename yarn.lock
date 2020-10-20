@@ -4987,11 +4987,6 @@ react-dom@16.14.0:
     prop-types "^15.6.2"
     scheduler "^0.19.1"
 
-react-hook-form@^6.9.5:
-  version "6.9.5"
-  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-6.9.5.tgz#a700ff55987c4409d938f3609f06bd516e8a86d7"
-  integrity sha512-kkUm6b4u1Iy3wCdHA0fal23sjGQMg8BBRAT3KBG9PEdls5e+7OX2Df20oBPgpXxo/GaIwk2Lh5DeVv5OeVjKsg==
-
 react-infinite-scroll-component@^5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/react-infinite-scroll-component/-/react-infinite-scroll-component-5.1.0.tgz#3c0043cd17c6857c25d3ca7aa4171e0c33ce8023"
