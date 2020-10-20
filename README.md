@@ -1,30 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Tecnologias utilizadas
+  
+ - React - [Uma biblioteca JavaScript para criar interfaces de usuário](https://pt-br.reactjs.org/)
+ - Nextjs - [The React Framework for Production](https://nextjs.org/docs)
+ - SASS - [CSS with superpowers](https://sass-lang.com/)
+ - Styled Components - [Visual primitives for the component age](https://styled-components.com/)
+ - TypeScript - [Typed JavaScript at Any Scale.](https://www.typescriptlang.org/)
+ 
+ 
+ ## CSS
 
-## Getting Started
+Para criterio de avaliação, foram utilizado a metedologia BEM com Sass e o styled components (padrão que industria usa atualmente como as seguintes empresas, Facebook, Netflix, Airbnb, Spotfy...) para desenvolvimento dos componentes.
 
-First, run the development server:
+
+## Rodando o Projeto
+
+Para rodar projeto rode no terminal:
 
 ```bash
-npm run dev
-# or
-yarn dev
+npm i && npm run dev
+# ou
+yarn && yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3000](http://localhost:3000) para visualizar aplicação.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Você pode começar a editar a página modificando `pages / index.js`. A página é atualizada automaticamente conforme você edita o arquivo.
 
-## Learn More
+Para rodar build do projeto rode no terminal:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build && npm run start
+# ou
+yarn build && yarn start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Ambiente Live
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Você pode testar a aplicação no site abaixo:
 
-## Deploy on Vercel
+- [Atlas GitHub APP](https://github-ap-i.vercel.app/) - GitHub APP.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
