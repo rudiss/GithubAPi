@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-wrap-multilines */
 /* eslint-disable camelcase */
 import React from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
@@ -7,7 +8,7 @@ import { Header, Container } from "./styles";
 import { getUser } from "../../services/githubApi";
 
 type UserListProps = {
-  data: [];
+  data: Record<string, unknown>[];
   fetchUsers: (arg?) => void;
 };
 

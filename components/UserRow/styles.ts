@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import styled from "styled-components";
+import { breakpoints } from "../util";
 
 export const Container = styled.li`
   width: 100%;
@@ -9,12 +10,16 @@ export const Container = styled.li`
   border-bottom: 0.5px solid rgba(0, 0, 0, 0.5);
   padding-bottom: 11px;
   margin-bottom: 14px;
+
+  @media (min-width: ${breakpoints.desktop.min}) {
+    padding: 40px 0;
+  }
 `;
 
 export const Avatar = styled.img`
   width: 50px;
   height: 50px;
-  flex-shrink: 1;
+  flex-shrink: 0;
   background-position: center;
   background-size: cover;
   background: url(""),
@@ -34,10 +39,12 @@ export const Avatar = styled.img`
 `;
 
 export const UserName = styled.p`
-  width: 290px;
+  max-width: 290px;
   height: 61px;
+  width: 100%;
   display: flex;
   align-items: center;
+  cursor: pointer;
 
   font-weight: 600;
   font-size: 15px;
