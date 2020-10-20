@@ -8,11 +8,16 @@
     "start": "next start"
   },
   "dependencies": {
+    "date-fns": "^2.16.1",
+    "lodash": "^4.17.20",
     "next": "9.5.5",
     "react": "16.14.0",
     "react-dom": "16.14.0",
+    "react-hook-form": "^6.9.5",
+    "react-infinite-scroll-component": "^5.1.0",
     "react-placeholder": "^4.0.3",
     "react-query": "^2.23.1",
+    "react-tabs": "^3.1.1",
     "sass": "^1.27.0",
     "styled-components": "^5.2.0"
   },
