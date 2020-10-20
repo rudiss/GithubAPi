@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import React from 'react';
+import React from "react";
 
 import {
   Container,
@@ -8,28 +8,30 @@ import {
   Name,
   UserName,
   FollowContainer,
+  BackContainer,
+  NameContainer,
 } from "./styles";
 
-import Folder from '../../images/FolderIcon';
-import FollowIcon from '../../images/FollowIcon';
-import FollowersIcon from '../../images/FollowersIcon';
-import User from '../../pages/user/[id]';
-import UsernameIcon from '../../images/UsernameIcon';
+import Folder from "../../images/FolderIcon";
+import FollowIcon from "../../images/FollowIcon";
+import FollowersIcon from "../../images/FollowersIcon";
+import UsernameIcon from "../../images/UsernameIcon";
 
-// <Icon src={userProfile?.avatar_url} />
-//   <p>{userProfile?.name}</p>
-//   <p>{userProfile?.login}</p>
-
-const UserProfile: React.FC = ({ data }) => {
-  console.log(data);
+type UserProfileProps = {
+  data: Record<string, unknown>;
+};
+const UserProfile: React.FC<UserProfileProps> = ({ data }) => {
   return (
     <Container>
+      <BackContainer />
       <UserContainer>
         <Avatar src={data?.avatar_url} />
-        <Name>{data?.name}</Name>
-        <UserName>
-          <UsernameIcon /> {data?.login}
-        </UserName>
+        <NameContainer>
+          <Name>{data?.name}</Name>
+          <UserName>
+            <UsernameIcon /> {data?.login}
+          </UserName>
+        </NameContainer>
         <FollowContainer>
           <span>
             <div>
@@ -55,4 +57,4 @@ const UserProfile: React.FC = ({ data }) => {
   );
 };
 
-export default UserProfile;
+export default React.memo(UserProfile);
