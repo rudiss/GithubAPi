@@ -9,7 +9,7 @@
  
  ## CSS
 
-Para criterio de avaliação Foram utilizadas tanto a metedologia BEM com Sass e styled components (padrão que industria usa atualmente como as seguintes empresas, Facebook, Netflix, Airbnb, Spotfy...) para desenvolvimento dos componentes.
+Para criterio de avaliação, foram utilizado a metedologia BEM com Sass e o styled components (padrão que industria usa atualmente como as seguintes empresas, Facebook, Netflix, Airbnb, Spotfy...) para desenvolvimento dos componentes.
 
 
 ## Rodando o Projeto
