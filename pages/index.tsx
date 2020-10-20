@@ -9,8 +9,8 @@ const Home: React.FC = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    const val = inputRef?.current?.value;
-    if (inputRef?.current?.value) window.localStorage.setItem("search", val);
+    const input = inputRef.current as HTMLInputElement;
+    if (input.value) window.localStorage.setItem("search", input.value);
   };
 
   return (

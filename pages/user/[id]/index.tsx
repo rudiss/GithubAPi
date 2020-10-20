@@ -8,7 +8,6 @@ import {
   RoundShape,
   TextRow,
 } from "react-placeholder/lib/placeholders";
-import { Container } from "./styles";
 import { getUser } from "../../../services/githubApi";
 import UserAbout from "../../../components/AboutUser";
 import Navigation from "../../../components/Navigation";
@@ -66,7 +65,7 @@ const User: React.FC = () => {
     </div>
   );
   return (
-    <Container>
+    <div>
       <Navigation label="Perfil" to="/users" />
       <ReactPlaceholder
         delay={2000}
@@ -77,7 +76,7 @@ const User: React.FC = () => {
         <UserProfile data={userProfile} />
         <UserAbout about={userProfile} />
       </ReactPlaceholder>
-    </Container>
+    </div>
   );
 };
 

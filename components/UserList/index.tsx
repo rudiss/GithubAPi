@@ -50,7 +50,8 @@ const UserList: React.FC<UserListProps> = ({ data, fetchUsers }) => {
 
   React.useEffect(() => {
     if (localStorage.getItem("search")) {
-      inputRef.current.value = localStorage.getItem("search");
+      const input = inputRef.current as HTMLInputElement;
+      input.value = localStorage.getItem("search");
       setInputText(localStorage.getItem("search"));
     }
 
