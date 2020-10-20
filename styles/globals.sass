@@ -73,6 +73,8 @@ table
     align-items: center
     justify-content: center
     cursor: pointer
+    background: #F7F9FA
+
 
     @include media("desktop")
       min-height: 50px
@@ -150,6 +152,10 @@ table
         line-height: 21px
         color: #0366D6
         text-transform: capitalize
+        a
+          text-decoration: none
+          &:active
+            color: inherit
 
         @include media("desktop")
           font-size: 18px

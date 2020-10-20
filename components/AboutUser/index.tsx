@@ -117,27 +117,38 @@ const UserAbout: React.FC<UserAboutProps> = ({
             </p>
           }
         >
-          {reposList.map(({ name, description, language, updated_at }, i) => (
-            <div key={name + i} className="tabs__panel__projects">
-              <h2>{name}</h2>
-              <p>{textTruncate(description)}</p>
-              <div className="tabs__panel__projects__info">
-                <div className="language">
-                  <div
-                    className="language__color"
-                    style={{ backgroundColor: handleLanguageColor(language) }}
-                  />
-                  <span>{language || "Não espefificado"}</span>
+          {reposList.map(
+            (
+              { name, description, language, updated_at, html_url: repoLink },
+              i
+            ) => (
+              <div key={name + i} className="tabs__panel__projects">
+                <h2>
+                  <a href={repoLink} target="_blank" rel="noreferrer">
+                    {name}
+                  </a>
+                </h2>
+                <p>{textTruncate(description)}</p>
+                <div className="tabs__panel__projects__info">
+                  <div className="language">
+                    <div
+                      className="language__color"
+                      style={{ backgroundColor: handleLanguageColor(language) }}
+                    />
+                    <span>{language || "Não espefificado"}</span>
+                  </div>
+                  {updated_at && (
+                    <span className="language__updateAt">
+                      {`Atualizado em ${format(
+                        new Date(updated_at),
+                        "dd/MM/yyyy"
+                      )}`}
+                    </span>
+                  )}
                 </div>
-                <span className="language__updateAt">
-                  {updated_at`Atualizado em ${format(
-                    new Date(updated_at),
-                    "dd/MM/yyyy"
-                  )}`}
-                </span>
               </div>
-            </div>
-          ))}
+            )
+          )}
         </InfiniteScroll>
       </TabPanel>
     </Tabs>
