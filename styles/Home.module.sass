@@ -1,5 +1,24 @@
+@mixin media($breakpoint)
+  @if $breakpoint == phone
+      @media (min-width: 320px) and (max-width: 480px)
+         @content
+
+  @if $breakpoint == tablet
+      @media (min-width: 481px) and (max-width: 768px)
+         @content
+
+  @if $breakpoint == desktop
+      @media (min-width: 769px)
+        @content
 .home
   padding: 65px 23px
+
+  @include media("desktop")
+    padding: 0
+    display: flex
+    align-items: center
+    justify-content: center
+    height: 100vh
 
   .main
     display: flex
@@ -7,6 +26,8 @@
     align-items: center
     flex-direction: column
     width: 100%
+    margin: 0 auto
+    max-width: 420px
 
     &__container
       width: 100%
@@ -35,7 +56,7 @@
       line-height: 36px
       margin-bottom: 19px
       height: 100%
-      width: 95%
+      width: 96.67%
       outline: none
       padding: 6px
 
@@ -67,9 +88,3 @@
 
     &__button__search
         background: #6FCF97
-
-
-@media (max-width: 600px)
-  .grid
-    width: 100%
-    flex-direction: column

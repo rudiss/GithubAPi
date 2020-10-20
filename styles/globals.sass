@@ -1,4 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700&display=swap')
+@mixin media($breakpoint)
+  @if $breakpoint == phone
+      @media (max-width: 480px)
+         @content
+
+  @if $breakpoint == tablet
+      @media (min-width: 481px)
+         @content
+
+  @if $breakpoint == desktop
+      @media (min-width: 769px)
+        @content
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
   margin: 0
@@ -8,13 +20,11 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   font: inherit
   vertical-align: baseline
 
-
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
   display: block
 
 body
-  line-height: 1
-  font-family: 'Montserrat', sans-serif !important
+  font-family: 'Montserrat', sans-serif
 
 ol, ul
   list-style: none
@@ -35,3 +45,157 @@ q
 table
   border-collapse: collapse
   border-spacing: 0
+
+.tabs
+  @include media("desktop")
+    display: grid
+    grid-template-columns: 201px 1fr
+
+  &__list
+    height: 50px
+    font-weight: 500
+    font-size: 16px
+    line-height: 22px
+    display: flex
+    align-items: center
+    text-align: center
+    color: #000000
+    background: #F7F9FA
+    margin-bottom: 30px
+
+    @include media("desktop")
+      flex-direction: column
+
+  &__tab
+    width: 100%
+    height: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    cursor: pointer
+
+    @include media("desktop")
+      min-height: 50px
+
+    &:first-child
+      border-right: 1px solid #DAE5F0
+
+    &.react-tabs__tab--selected
+      border-bottom: 3px solid #5C97D2
+
+      @include media("desktop")
+        border-right: 3px solid #5C97D2
+        border-bottom: none
+
+  &__panel
+    padding: 0 20px
+    margin-bottom: 30px
+    display: none
+
+    @include media("desktop")
+     padding: 0 60px
+     max-height: 450px
+     overflow: auto
+
+    &.react-tabs__tab-panel--selected
+      display: unset
+
+    h2
+      font-weight: 600
+      font-size: 18px
+      line-height: 25px
+      color: #162668
+      padding: 0 20px
+
+    p
+      font-size: 16px
+      line-height: 22px
+      color: #263238
+      padding: 0 20px
+
+
+    &__location
+      margin-top: 20px
+      display: flex
+      flex-direction: column
+      align-items: flex-start
+      justify-content: flex-start
+      padding: 0 20px
+
+      span, a
+        font-weight: 600
+        font-size: 16px
+        line-height: 40px
+        color: #162668
+
+        display: flex
+        align-items: center
+        justify-content: center
+
+        svg
+          margin-right: 13px
+
+
+    &__projects
+      border-bottom: 0.5px solid rgba(0, 0, 0, 0.5)
+      padding: 17px 0
+      margin: 0 20px
+
+      &:first-child
+        padding-top: 0
+
+      h2
+        font-weight: 600
+        font-size: 14px
+        line-height: 21px
+        color: #0366D6
+        text-transform: capitalize
+
+        @include media("desktop")
+          font-size: 18px
+
+      p
+        font-weight: 600
+        font-size: 10px
+        line-height: 21px
+        color: #586069
+        margin-left: 8px
+        @include media("desktop")
+          font-size: 14px
+          font-weight: 500
+
+
+
+
+
+      &__info
+        display: flex
+        align-items: center
+        font-weight: 600
+        font-size: 8px
+        line-height: 21px
+        color: #586069
+        justify-content: space-between
+
+        @include media("desktop")
+          font-size: 12px
+          font-weight: normal
+
+
+    .language
+      display: flex
+      align-items: center
+
+      &__color
+        width: 8px
+        height: 8px
+        border-radius: 50%
+        margin-right: 4px
+
+.mobile-only
+  @include media("tablet")
+    display: none !important
+
+.desktop-only
+  @include media("phone")
+    display: none !important
